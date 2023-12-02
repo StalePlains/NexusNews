@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+        }
+        .navbar {
+            background-color: #0000FF;
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            z-index: 10000;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .main-content {
+            padding: 20px;
+            text-align: center;
+        }
+        .footer {
+            background-color: #002FFF;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Logo</a>
+        <div>
+            <a href="/">Home</a>
+            <a href="/view-users">View Users</a>
+            <a href="/login">Login</a>
+            <a href="/register">Sign Up</a>
+            <!-- Add other page links as needed -->
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>Welcome to Our Site!</h1>
+        <p>This is some sample text as the main message.</p>
+        <a href="/login" class="button">Log In</a>
+        <a href="/register" class="button">Sign Up</a>
+    </div>
+
+    <div class="footer">
+        <p>Footer content here. Links to other parts of the site can go here.</p>
+    </div>
+</body>
+</html>

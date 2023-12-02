@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Accept a payment</title>
+    <meta name="description" content="A demo of a payment on Stripe" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+      // This is your test publishable API key.
+      const stripe = Stripe("pk_test_CHGjk106lrYkf05sxarIbSvm");
+
+      initialize();
+
+      // Create a Checkout Session as soon as the page loads
+      async function initialize() {
+        const response = await fetch("/create-checkout-session", {
+          method: "POST",
+        });
+
+        const { clientSecret } = await response.json();
+
+        const checkout = await stripe.initEmbeddedCheckout({
+          clientSecret,
+        });
+
+        // Mount Checkout
+        checkout.mount('#checkout');
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Display a payment form -->
+      <div id="checkout">
+        <!-- Checkout will insert the payment form here -->
+      </div>
+  </body>
+</html>
